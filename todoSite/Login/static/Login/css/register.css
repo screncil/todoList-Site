@@ -1,0 +1,16 @@
+.main {
+    width: 500px;
+    margin: auto;
+}
+
+.submit-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.auth-word {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 30px;
+}
