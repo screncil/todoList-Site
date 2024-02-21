@@ -1,1 +1,1 @@
-My First TODO List Site on Django Framework
+My First TODO Website created with Django Framework
