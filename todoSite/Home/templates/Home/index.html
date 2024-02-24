@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block style_path %}../../static/Home/index.css{% endblock %}
+
+
+{% block body %}
+    {% if user is not None %}
+        <a href="/additem"><button type="button" style="margin: 10px;" class="btn btn-success">Добавить запись</button></a>
+        {% if lenitems > 0 %}
+            {% for item in items %}
+                <div class="card" style="border: 1px solid black; width: 50%; margin: auto; margin-bottom: 5px; top: 50%; height: auto; border-radius: 20px;">
+                        <p style="margin-left: 20px; margin-top: 10px; font-weight: bold; font-size: 30px; width: 100%; height: 30px">{{ item.title }}</p>
+                        <p style="margin-left: 20px; margin-top: 2px;">{{ item.description }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="card" style="margin: auto; top: 50%; width: 50%; text-align: center; border: none;">
+                <p style="font-weight: bold;">Еще нету никаких записей</p>
+            </div>
+        {% endif %}
+    {% else %}
+        <p style="margin: 10px;">Авторизуйтесь для отображения или добавления записи</p>
+    {% endif %}
+{% endblock %}
