@@ -44,3 +44,12 @@ def addItem(request):
             return render(request, "Home/addItem.html", {"user": user, "message": ""})
         else:
             return redirect("/")
+        
+
+
+def deleteItem(request):
+    if "session" in request.COOKIES:
+        if List.objects.get(id=request.GET['id']) is not None:
+            item = List.objects.get(id=request.GET['id'])
+            item.delete()
+            return redirect('/')
